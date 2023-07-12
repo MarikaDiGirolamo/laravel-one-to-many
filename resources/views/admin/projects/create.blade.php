@@ -23,6 +23,15 @@
                     @error('title')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+
+                    <label for="type_id">Category</label>
+                    <select class="form-control mb-4" name="type_id" id="type_id">
+                        <option value="" selected disabled>Please select a category</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+
                     <label>Content</label>
                     <textarea name="Content" class="form-control @error('content') is-invalid @enderror" cols="30" rows="5"></textarea>
                     @error('content')
