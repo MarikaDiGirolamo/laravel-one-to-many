@@ -14,4 +14,9 @@ class Project extends Model
         "image",
         "link"
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class); //relazione definita
+    }
 }
